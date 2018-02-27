@@ -67,11 +67,11 @@
 
                                   <!-- if has thumbnail - render image partial -->
                                   <% if (items[0].image) { %>
-                                    <%- include('/private_share_2/partials/single/image.ejs', { item: items[0] }) %>
+                                    <%- include('/partials/single/image.ejs', { item: items[0] }) %>
 
                                   <!-- if no thumbnail - render file partial -->
                                   <% } else { %>
-                                    <%- include('/private_share_2/partials/single/file.ejs', { item: items[0] }) %>
+                                    <%- include('/partials/single/file.ejs', { item: items[0] }) %>
                                   <% } %>
 
                                 <!-- if multiple files - check types -->
@@ -83,11 +83,11 @@
                                     items.every(i => i.image) ||
                                     items.every(i => i.other)
                                   ) { %>
-                                    <%- include('/private_share_2/partials/sametype/index.ejs', { items: items }) %>
+                                    <%- include('/partials/sametype/index.ejs', { items: items }) %>
 
                                   <!-- if not - render mixed content partial -->
                                   <% } else { %>
-                                    <%- include('/private_share_2/partials/mixedtype/index.ejs', { items: items }) %>
+                                    <%- include('/partials/mixedtype/index.ejs', { items: items }) %>
                                   <% } %>
                                 <% } %>
 

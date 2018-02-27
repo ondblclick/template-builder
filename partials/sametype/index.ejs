@@ -1,5 +1,5 @@
 <% if (items.length <= 16) { %>
-  <%- include('/private_share_2/partials/sametype/' + items.length + '.ejs', { items: items }) %>
+  <%- include('/partials/sametype/' + items.length + '.ejs', { items: items }) %>
 <% } else { %>
-  <%- include('/private_share_2/partials/sametype/17+.ejs', { items: items }) %>
+  <%- include('/partials/sametype/17+.ejs', { items: items }) %>
 <% } %>

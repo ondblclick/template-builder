@@ -1,5 +1,5 @@
 <% if (items.find(i => i.folder)) { %>
-  <%- include('/private_share_2/partials/mixedtype/block.ejs', { items: items.filter(i => i.folder) }) %>
+  <%- include('/partials/mixedtype/block.ejs', { items: items.filter(i => i.folder) }) %>
 <% } %>
 
 <% if (items.find(i => i.image)) { %>
@@ -8,7 +8,7 @@
       <p class="p-heading">Photos & Videos</p>
     </td>
   </tr>
-  <%- include('/private_share_2/partials/mixedtype/block.ejs', { items: items.filter(i => i.image) }) %>
+  <%- include('/partials/mixedtype/block.ejs', { items: items.filter(i => i.image) }) %>
 <% } %>
 
 <% if (items.find(i => i.other)) { %>
@@ -17,5 +17,5 @@
       <p class="p-heading">Files</p>
     </td>
   </tr>
-  <%- include('/private_share_2/partials/mixedtype/block.ejs', { items: items.filter(i => i.other) }) %>
+  <%- include('/partials/mixedtype/block.ejs', { items: items.filter(i => i.other) }) %>
 <% } %>
