@@ -1,0 +1,23 @@
+{
+  "requestor": "First Last",
+  "url": "https://dev1-wdcloud.wdtest1.com/action/share_invite/<guid>/signup",
+  "attachments": [{
+    "type": "text/directory",
+    "filename": "Empty Folder 1"
+  }, {
+    "type": "text/directory",
+    "filename": "Empty Folder 2"
+  }, {
+    "type": "image/jpg",
+    "filename": "Some_image.jpg"
+  }, {
+    "type": "application/pdf",
+    "filename": "Pdf_file.pdf"
+  }, {
+    "type": "application/pdf",
+    "filename": "Pdf_file.pdf"
+  }, {
+    "type": "application/pdf",
+    "filename": "Pdf_file.pdf"
+  }]
+}

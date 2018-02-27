@@ -2,29 +2,8 @@ const ejs = require('ejs');
 const fs = require('fs');
 const posthtml = require('posthtml');
 
-const input = {
-  requestor: "First Last",
-  url: "https://dev1-wdcloud.wdtest1.com/action/share_invite/<guid>/signup",
-  attachments: [{
-    "type": "text/directory",
-    "filename": "Empty Folder 1",
-  }, {
-    "type": "text/directory",
-    "filename": "Empty Folder 2",
-  }, {
-    "type": "image/jpg",
-    "filename": "Some_image.jpg",
-  }, {
-    "type": "application/pdf",
-    "filename": "Pdf_file.pdf",
-  }, {
-    "type": "application/pdf",
-    "filename": "Pdf_file.pdf",
-  }, {
-    "type": "application/pdf",
-    "filename": "Pdf_file.pdf",
-  }]
-};
+const encoding = 'utf8';
+const input = JSON.parse(fs.readFileSync(process.argv[2], encoding));
 
 const FOLDER_TYPE = 'text/directory';
 const SUPPORTED_IMAGES = ['png', 'jpg', 'jpeg', 'jpe', 'jfif', 'gif', 'tif', 'tiff', 'arw', 'srf', 'sr2', 'crw', 'cr2', 'nef', 'nrw', 'kdc', 'dcr', 'orf', 'ptx', 'pef', 'raf', 'raw', 'dng', 'rw2', 'x3f', 'srw', '3fr', 'mrw', 'heic', 'psd'];
@@ -79,9 +58,9 @@ const items = input.attachments.map((i) => {
   if (THUMBS.includes(ext)) return {
     ...i,
     image: true,
-    src1x: 'http://via.placeholder.com/100x100',
-    src2x: 'http://via.placeholder.com/200x200',
-    src3x: 'http://via.placeholder.com/400x400',
+    src1x: 'http://via.placeholder.com/200x200',
+    src2x: 'http://via.placeholder.com/400x400',
+    src3x: 'http://via.placeholder.com/800x660',
   };
 
   return {
@@ -93,7 +72,6 @@ const items = input.attachments.map((i) => {
   };
 });
 
-const encoding = 'utf8';
 const cssPath = 'styles.css';
 const css = fs.readFileSync(cssPath, encoding);
 const file = fs.readFileSync('index.ejs', encoding);
@@ -112,4 +90,6 @@ posthtml([
     html5: true,
     minifyCSS: true,
   }),
-]).process(html).then(res => fs.writeFileSync('index.html', res.html));
+]).process(html).then(res => {
+  fs.writeFileSync('index.html', res.html.replace(/(class=".*?")/g, ''));
+});
