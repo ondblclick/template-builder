@@ -1,0 +1,12 @@
+{
+  "name": "template-builder",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "posthtml": "^0.11.3",
+    "posthtml-inline-css": "^1.2.3"
+  }
+}

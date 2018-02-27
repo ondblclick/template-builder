@@ -1,0 +1,21 @@
+<% if (items.find(i => i.folder)) { %>
+  <%- include('/private_share_2/partials/mixedtype/block.ejs', { items: items.filter(i => i.folder) }) %>
+<% } %>
+
+<% if (items.find(i => i.image)) { %>
+  <tr>
+    <td colspan="4">
+      <p class="p-heading">Photos & Videos</p>
+    </td>
+  </tr>
+  <%- include('/private_share_2/partials/mixedtype/block.ejs', { items: items.filter(i => i.image) }) %>
+<% } %>
+
+<% if (items.find(i => i.other)) { %>
+  <tr>
+    <td colspan="4">
+      <p class="p-heading">Files</p>
+    </td>
+  </tr>
+  <%- include('/private_share_2/partials/mixedtype/block.ejs', { items: items.filter(i => i.other) }) %>
+<% } %>
