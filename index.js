@@ -90,6 +90,4 @@ posthtml([
     html5: true,
     minifyCSS: true,
   }),
-]).process(html).then(res => {
-  fs.writeFileSync('index.html', res.html.replace(/(class=".*?")/g, ''));
-});
+]).process(html).then(res => console.log(res.html.replace(/(class=".*?")/g, '')));
