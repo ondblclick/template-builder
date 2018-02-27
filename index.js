@@ -104,6 +104,12 @@ const html = ejs.render(file, {
   items
 }, { root: '.' });
 
-posthtml(
-  [require('posthtml-inline-css')(css)]
-).process(html).then(res => fs.writeFileSync('index.html', res.html));
+posthtml([
+  require('posthtml-inline-css')(css),
+  require('posthtml-minifier')({
+    removeComments: true,
+    collapseWhitespace: true,
+    html5: true,
+    minifyCSS: true,
+  }),
+]).process(html).then(res => fs.writeFileSync('index.html', res.html));
