@@ -11,13 +11,13 @@ npm install
 ## Build a template
 
 ```
-node index.js
+node index.js input.json
 ```
 
 ## Build a template & write to file:
 
 ```
-node index.js > index.html
+node index.js input.json > index.html
 ```
 
 ## Input

@@ -2,7 +2,7 @@
   "name": "template-builder",
   "version": "1.0.0",
   "scripts": {
-    "build": "node index.js > index.html"
+    "build": "node index.js input.json > index.html"
   },
   "dependencies": {
     "ejs": "^2.5.7",

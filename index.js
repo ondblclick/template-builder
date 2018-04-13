@@ -2,6 +2,7 @@ const ejs = require('ejs');
 const fs = require('fs');
 const posthtml = require('posthtml');
 
+// console.log(process.argv[1]);
 const encoding = 'utf8';
 const input = JSON.parse(fs.readFileSync(process.argv[2], encoding));
 
